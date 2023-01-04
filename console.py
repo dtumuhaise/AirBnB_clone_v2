@@ -119,6 +119,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
+        # Task 2 update
         args = args.split(" ")
         if args[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
