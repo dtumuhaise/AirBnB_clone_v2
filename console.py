@@ -131,7 +131,7 @@ class HBNBCommand(cmd.Cmd):
             key = attr[0]
             value = ""
             if attr[1][0] == '\"':
-                value = attr[1][1:-1].replace("_"," ").replace('"', '\"')
+                value = attr[1][1:-1].replace("_", " ").replace('"', '\"')
             else:
                 if '.' in attr[1]:
                     try:
@@ -149,8 +149,6 @@ class HBNBCommand(cmd.Cmd):
                 pass
         new_instance.save()
         print(new_instance.id)
-
-
 
     def help_create(self):
         """ Help information for the create method """
@@ -345,6 +343,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the update class """
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
