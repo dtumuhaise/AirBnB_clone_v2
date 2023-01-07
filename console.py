@@ -141,7 +141,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     try:
                         value = int(attr[1])
-                    except Exception:
+                    except:
                         pass
             if value != "":
                 setattr(new_instance, key, value)
