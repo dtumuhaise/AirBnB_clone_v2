@@ -40,7 +40,7 @@ class BaseModel:
                     self.updated_at = datetime.now()
             try:
                 del kwargs['__class__']
-            except Exception:
+            except:
                 pass
             self.__dict__.update(kwargs)
 
