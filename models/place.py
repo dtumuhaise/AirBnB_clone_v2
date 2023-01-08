@@ -18,7 +18,6 @@ place_amenity = Table(
 
 
 class Place(BaseModel, Base):
-    """ Class Place Containing the most basic info """
     __tablename__ = 'places'
     city_id = Column(String(60), ForeignKey('cities.id'), nullable=False)
     user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
