@@ -11,3 +11,17 @@ class State(BaseModel, Base):
     __tablename__ = 'states'
     name = Column(String(128), nullable=False)
     cities = relationship('City', backref='state')
+
+    @property
+    def cities(self):
+        """
+        getter attribute returns the list of city instances
+        """
+
+        from models import storage
+        from models.city import City
+        new_list = []
+        for key, obj_city in storage.all(City).items():
+            if obj_city.state_id == self.id:
+                new_list.append(obj_city)
+        return new_list
