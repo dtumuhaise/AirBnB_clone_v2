@@ -3,14 +3,15 @@
 
 sudo apt-get update
 sudo apt-get insall nginx -y
-sudo mkdir /data/
-sudo mkdir /data/web_static/
+
 sudo mkdir /data/web_static/releases/
 sudo mkdir /data/web_static/shared/
 sudo mkdir /data/web_static/releases/test/
-sudo touch /data/web_static/releases/test/index.html
-echo "<h1>hello World</h1>" >> index.html
+
+sudo echo "<h1>hello World</h1>" >> /data/web_static/releases/test/index.html
+
 sudo ln -sfn /data/web_static/releases/test/ /data/web_static/current
+
 sudo chown -R ubuntu:ubuntu /data/
 
 sudo echo "location /hbnb_static/ {
