@@ -9,8 +9,12 @@ sudo mkdir /data/web_static/releases/
 sudo mkdir /data/web_static/shared/
 sudo mkdir /data/web_static/releases/test/
 sudo touch /data/web_static/releases/test/index.html
-html_content="<h1>hello World</h1>"
-echo "$html_content" >> index.html
+echo "<h1>hello World</h1>" >> index.html
 sudo ln -sfn /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
+
+echo "location /hbnb_static/ {
+    alias /data/web_static/current/;
+    }" >> /etc/nginx/sites-available/default
+
 sudo service nginx restart
