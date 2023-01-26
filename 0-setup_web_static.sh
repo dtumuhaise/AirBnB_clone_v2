@@ -13,7 +13,7 @@ echo "<h1>hello World</h1>" >> index.html
 sudo ln -sfn /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
 
-echo "location /hbnb_static/ {
+sudo echo "location /hbnb_static/ {
     alias /data/web_static/current/;
     }" >> /etc/nginx/sites-available/default
 
