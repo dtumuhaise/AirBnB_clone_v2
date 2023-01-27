@@ -2,7 +2,7 @@
 # setup web sercer for deployment of web_static
 
 sudo apt-get update
-sudo apt-get insall nginx -y
+sudo apt-get install nginx -y
 
 sudo mkdir -p /data/web_static/releases/
 sudo mkdir -p /data/web_static/shared/
