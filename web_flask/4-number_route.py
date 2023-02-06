@@ -28,10 +28,9 @@ def python(text):
     return "Python {}".format(text.replace("_", " "))
 
 
-@app.route("/number/<n>")
+@app.route("/number/<int:n>")
 def num(n):
-    if isinstance(n, int):
-        return "n is a number"
+    return "{} is a number".format(n)
 
 
 if __name__ == "__main__":
